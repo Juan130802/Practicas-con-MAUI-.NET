@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PracticaMAUI.ViewModel" 
+             x:Class="PracticaMAUI.NewPage1"
+             BackgroundColor="LightBlue"
+             Title="Pagina#2">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20">
+
+            <CollectionView ItemsSource="{Binding Characters}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="White"
+                               CornerRadius="10"
+                               HasShadow="True"
+                               Padding="15"
+                               Margin="10">
+                            <StackLayout>
+                                <Label Text="{Binding Name}"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+
+                                <Image Source="{Binding Image}"
+                                       HeightRequest="185"
+                                       Aspect="AspectFit"
+                                       SemanticProperties.Description="Descripción de la imagen" />
+
+                                <Label Text="{Binding Description}"
+                                       FontSize="16"
+                                       TextColor="Gray"
+                                       Margin="0,10,0,10" />
+
+                                <Label Text="{Binding Status}"
+                                       FontSize="16"
+                                       TextColor="Gray"
+                                       Margin="0,5,0,5" />
+
+                                <Label Text="{Binding Species}"
+                                       FontSize="16"
+                                       TextColor="Gray"
+                                       Margin="0,5,0,10" />
+
+                                <Label Text="{Binding Type}"
+                                       FontSize="16"
+                                       TextColor="Gray"
+                                       Margin="0,5,0,10" />
+
+                                <Button Text="Hacer algo"
+                                        BackgroundColor="#2196F3"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        Padding="10" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Botón adicional"
+                    BackgroundColor="Green"
+                    Clicked="OnBackButtonClicked"
+                    TextColor="White"
+                    Padding="10"
+                    Margin="10,20,10,0" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

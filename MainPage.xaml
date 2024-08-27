@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMAUI.MainPage"
+             BackgroundColor="LightBlue" 
+             Title="Practica#1"
+             Padding="15">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="hq720.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Bienvenidos a nuestra Primera App"
+                Style="{StaticResource Headline}"
+                FontSize="30"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Estamos utilizando Maui y .Net"
+                FontSize="25"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level2"/>
+
+
+            <Button Text="Ir a la segunda página"
+                Clicked="OnNavigateButtonClicked" 
+                    HorizontalOptions="Fill"
+                    />
+            
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
